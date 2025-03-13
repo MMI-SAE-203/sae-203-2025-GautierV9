@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Facebook from "../assets/icons/facebook-dark.svg";
+import Instagram from "../assets/icons/instagram-dark.svg";
+import Youtube from "../assets/icons/youtube-dark.svg";
+---
+<Layout titre="Ciné Flash 25">   
+      <body class="bg-gray-100 flex flex-col items-center py-10 px-4">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-10">
+            <div class="lg:w-1/2 text-center lg:text-left">
+              <h1 class="text-3xl font-bold">Contactez-nous – Ciné Flash 25</h1>
+              <p class="mt-4 text-gray-700">
+                Vous avez des questions sur le festival, la billetterie, ou souhaitez devenir partenaire ? 
+                N’hésitez pas à nous contacter via le formulaire ci-dessous ou à travers nos réseaux sociaux.
+              </p>
+            </div>
+      
+            <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg mt-6 lg:mt-0 lg:w-1/2">
+              <form class="flex flex-col">
+                <input type="text" name="name" placeholder="Entrez votre nom complet" required 
+                  class="p-3 border-2 border-yellow-400 rounded-md mb-4" />
+                <input type="email" name="email" placeholder="Entrez votre adresse mail/Numéro de téléphone" required 
+                  class="p-3 border-2 border-yellow-400 rounded-md mb-4" />
+                <input type="text" name="subject" placeholder="Entrez l’objet de votre message" required 
+                  class="p-3 border-2 border-yellow-400 rounded-md mb-4" />
+                <textarea name="message" placeholder="Entrez votre message" required 
+                  class="p-3 border-2 border-yellow-400 rounded-md mb-4"></textarea>
+                <button type="submit" class="bg-amber-400 hover:bg-amber-500 text-black font-bold py-3 rounded-md">
+                  Envoyer
+                </button>
+              </form>
+            </div>
+          </div>
+      
+          <hr class="w-1/3 my-6 border-gray-300 mx-auto" />
+      
+          <div class="flex justify-center space-x-4 text-2xl text-black">
+            <a href="#" class="hover:text-gray-600"><Instagram aria-label="Logo Instagram"/><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-gray-600"><Facebook aria-label="Logo Facebook"/><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-gray-600"><Youtube aria-label="Logo Youtube"/><i class="fab fa-youtube"></i></a>
+          </div>
+      
+          <p class="mt-4 text-lg font-bold text-black text-center">fakemail@cineflash25.com</p>
+        </div>
+      </body>
+</Layout>

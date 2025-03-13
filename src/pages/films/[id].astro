@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { OneID } from "../../../backend/backend.mjs";
+
+const { id } = Astro.params;
+const film = await OneID(id);
+if (!film) {
+  return Astro.redirect("/films");
+}
+---
+
+<Layout>
+  <div class="flex justify-center mt-7 mb-7 lg:mt-10">
+    <div class="max-w-4xl mx-4 p-6 bg-gray-200 rounded-2xl shadow-lg border border-gray-300 lg:p-10">
+      <h2 class="text-3xl font-bold text-center text-gray-900">{film.titre}</h2>
+      <div class="lg:grid lg:grid-cols-2 lg:gap-6 mt-6">
+        <div class="flex justify-center">
+          <img
+            src={film.imageUrl}
+            alt={`Affiche du film ${film.titre}`}
+            class="rounded-xl shadow-md w-full max-w-md object-cover"
+          />
+        </div>
+        <ul class="mt-6 space-y-3 text-gray-800 lg:mt-0">
+          <li class="rounded-2xl p-2 border-2 border-jaune ">
+            <span class="font-semibold">Réalisateur :</span> {film.realisateur}
+          </li>
+          <li class="rounded-2xl p-2 border-2 border-jaune ">
+            <span class="font-semibold">Date de sortie :</span> {film.sortie}
+          </li>
+          <li class="rounded-2xl p-2 border-2 border-jaune "><span class="font-semibold">Genre :</span> {film.genre}</li>
+          <li class="rounded-2xl p-2 border-2 border-jaune ">
+            <span class="font-semibold">Production :</span> {film.realisateur}
+          </li>
+          <li class="rounded-2xl p-2 border-2 border-jaune ">
+            <span class="font-semibold">Date de projection :</span> {film.date_pro}
+          </li>
+          <li class="rounded-2xl p-2 border-2 border-jaune ">
+            <span class="font-semibold">Synopsis :</span>
+            <p class="mt-2">{film.description}</p>
+          </li>
+          <li class="mt-4">
+            <a
+              href={film.bande_annonce}
+              class="text-black font-bold border-2 border-yellow-400 bg-white px-4 py-2 rounded-lg hover:bg-yellow-400 transition inline-block"
+            >
+              🎬 Voir la bande annonce
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

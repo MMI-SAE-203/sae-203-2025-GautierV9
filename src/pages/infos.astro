@@ -1,0 +1,31 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+---
+<Layout titre="Ciné Flash 25"> 
+    <Hero />  
+    <section class="bg-gray-100 m-10 p-6 border border-gray-300 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Horaires</h2>
+        <p class="text-gray-800">
+            Le festival se déroulera du 15 au 20 juin 2025. Les projections auront lieu chaque jour de 9h00 à 23h00.
+        </p>
+    
+        <h2 class="text-xl font-bold mt-6 mb-4">Lieu</h2>
+        <p class="text-gray-800">
+            Le festival aura lieu au <strong>Théâtre des Lumières</strong>, situé au 45 Avenue de la Culture, 69001 Lyon.
+        </p>
+    
+        <h2 class="text-xl font-bold mt-6 mb-4">Accès</h2>
+        <ul class="text-gray-800 space-y-2">
+            <li class="flex items-center">
+                🚇 <span class="ml-2">Métro ligne A - Station "Lumières"</span>
+            </li>
+            <li class="flex items-center">
+                🚌 <span class="ml-2">Bus C5 et C12 - Arrêt "Théâtre des Lumières"</span>
+            </li>
+            <li class="flex items-center">
+                🚗 <span class="ml-2">Parking payant "Lumières Parking" à 200m</span>
+            </li>
+        </ul>
+    </section>
+</Layout>

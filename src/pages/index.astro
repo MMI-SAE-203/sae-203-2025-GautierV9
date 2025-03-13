@@ -1,11 +1,69 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout titre="Ciné Flash 25">
+    <Hero />
+    <section class="bg-gris m-10 p-6 border border-gray-300 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Informations</h2>
+        <p class="text-gray-800">
+            Le festival aura lieu du 8 au 10 Août 2025 dans la ville de Ornans dans le département du Doubs en France.
+        </p>
+        <p class="mt-4 text-gray-800">
+            Dans un cadre naturel exceptionnel, ce festival met à l'honneur la créativité, l'accessibilité, et l'énergie du cinéma en proposant des projections en plein air. Avec une sélection variée de films courts, l'événement offre une expérience cinématographique dynamique et conviviale, accessible à tous, le tout dans une ambiance festive. Venez découvrir des films innovants dans un format rapide, au cœur des montagnes du Doubs.
+        </p>
+        <a href="/infos" class="mt-6 inline-flex items-center border-2 border-yellow-400 bg-blanc px-4 py-2 font-bold text-black rounded-lg hover:bg-yellow-400">
+            <span class="mr-2">➡️</span> En savoir plus sur le festival
+        </a>
+    </section>
+
+    <section class="bg-gris m-10 p-6 border border-gray-300 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Programme</h2>
+        <p class="text-gray-800">
+            Le Festival Ciné Flash 25, qui se tiendra du 8 au 10 août 2025 à Ornans, vous offre trois jours de découvertes
+            cinématographiques uniques. Avec une sélection riche et variée de courts-métrages, vous plongerez dans un
+            univers où créativité et dynamisme sont à l'honneur.
+        </p>
+        <p class="mt-4 text-gray-800">
+            Chaque journée est rythmée par des projections en plein air, des ateliers interactifs, et des moments de
+            partage autour du cinéma.
+        </p>
+        <a href="/acivites" class="mt-6 inline-flex items-center border-2 border-yellow-400 bg-white px-4 py-2 font-bold text-black rounded-lg hover:bg-yellow-400">
+            <span class="mr-2">➡️</span> Connaître le programmation
+        </a>
+    </section>
+
+    <section class="bg-gris m-10 p-6 border border-gray-300 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Billetterie</h2>
+        <p class="text-gray-800">
+            Assurez-vous de vivre une expérience cinématographique inoubliable en réservant vos billets
+            pour le Festival Ciné Flash 25, qui se déroulera du 8 au 10 août 2025 à Ornans. 
+            Notre billetterie est conçue pour être simple et accessible, offrant des options pour tous les budgets,
+            y compris des tarifs réduits pour les étudiants et des événements gratuits.
+        </p>
+        <p class="mt-4 text-gray-800">
+            Consultez ci-dessous les informations sur les tarifs, les modalités de réservation
+            et n’hésitez pas à réserver votre place pour profiter des projections en plein air et des moments forts du festival !
+        </p>
+        <a href="/billeterie" class="mt-6 inline-flex items-center border-2 border-yellow-400 bg-white px-4 py-2 font-bold text-black rounded-lg hover:bg-yellow-400">
+            <span class="mr-2">➡️</span> Réserver vos billets
+        </a>
+    </section>
+
+    <section class="bg-gris m-10 p-6 border border-gray-300 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Invités</h2>
+        <p class="text-gray-800">
+            Le festival Ciné Flash 25 ne pourrait pas exister sans la présence exceptionnelle de nos invités. 
+            Nous sommes fiers d’accueillir des réalisateurs, des acteurs, des producteurs et d’autres professionnels du cinéma 
+            qui partagent leur passion et leur expertise avec le public.
+        </p>
+        <p class="mt-4 text-gray-800">
+            Cette section met en avant les invités qui enrichissent l’événement par leurs échanges, leurs expériences et leurs connaissances. 
+            Venez découvrir leurs parcours et profiter de rencontres uniques autour du cinéma.
+        </p>
+        <a href="/invites" class="mt-6 inline-flex items-center border-2 border-yellow-400 bg-white px-4 py-2 font-bold text-black rounded-lg hover:bg-yellow-400">
+            <span class="mr-2">➡️</span> Découvrir nos invités
+        </a>
+    </section>
 </Layout>

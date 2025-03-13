@@ -1,0 +1,36 @@
+
+@import "tailwindcss";
+
+@theme {
+    --font-heading: "Stévie", sans-serif;
+    --font-common: "Nokara", sans-serif;
+
+    --color-jaune: #FFEE00;
+    --color-blanc: #F4F4F4;
+    --color-bleu: #1C1F4A;
+    --color-gris: #CDCDCD;
+}
+
+@layer base{
+    * {
+        @apply font-common
+    }
+    h2 {
+        @apply flex items-center gap-1 text-2xl font-semibold underline decoration-3
+    }
+    h3 {
+        @apply flex items-center gap-1 text-xl font-medium text-nowrap
+        before:w-full before:h-[2px] before:bg-jaune
+        after:w-full after:h-[2px] after:bg-jaune
+    }
+    a {
+        
+        @apply font-semibold 
+    }
+}
+
+@layer components{
+    .btn {
+        @apply bg-jaune py-2 px-4 gap-2 rounded-md uppercase font-medium text-xs w-fit hover:text-blanc no-underline active:text-blanc
+    }
+}

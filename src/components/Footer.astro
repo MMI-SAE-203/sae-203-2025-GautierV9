@@ -1,0 +1,50 @@
+---
+import Logo from "../assets/icons/logo.svg";
+import Facebook from "../assets/icons/facebook.svg";
+import Instagram from "../assets/icons/instagram.svg";
+import Youtube from "../assets/icons/youtube.svg";
+---
+
+<footer class="flex flex-col bg-gray-900 p-10 text-white">
+    <a href="/" class="mb-6">
+        <Logo />
+    </a>
+    <div class="flex flex-col gap-8 my-8">
+        <div class="flex flex-col gap-4">
+            <h4 class="text-lg font-bold">Navigation</h4>
+            <ul class="*:text-base *:font-normal">
+                <li><a href="/festival" class="text-white">Festival</a></li>
+                <li><a href="/contact" class="text-white">Contact</a></li>
+                <li><a href="/partenaires" class="text-white">Partenaires</a></li>
+            </ul>
+        </div>
+        <div class="flex flex-col gap-4">
+            <h4 class="text-lg font-bold">Informations</h4>
+            <p class="text-base font-normal">
+                Le festival aura lieu du 8 au 10 Août 2025 dans la ville de Ornans dans le département du Doubs en France.
+            </p>
+        </div>
+        <div class="flex flex-col gap-4">
+            <h4 class="text-lg font-bold">Mentions Légal</h4>
+            <p class="text-base font-normal">
+                Projet réalisé en 2024 dans le cadre d’un exercice pédagogique au département MMi de Montbéliard.
+            </p>
+        </div>
+        <div class="flex flex-col gap-4">
+            <ul class="flex gap-6" aria-label="Réseaux sociaux">
+                <li>
+                    <a href="https://www.instagram.com/mmi_montbeliard/"
+                        ><Instagram aria-label="Logo Instagram" /></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCgW7jR8McJwjxPh0fDQaXGg/videos"
+                        ><Youtube aria-label="Logo Youtube" /></a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/"
+                        ><Facebook aria-label="Logo Facebook" /></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>

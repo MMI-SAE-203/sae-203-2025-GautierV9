@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { OneIDInv } from "../../../backend/backend.mjs";
+
+const { id } = Astro.params;
+const invite = await OneIDInv(id);
+if (!invite) {
+  return Astro.redirect("/invites");
+}
+---
+
+<Layout>
+  <div class="flex justify-center mt-7 mb-7 lg:mt-10">
+    <div class="max-w-4xl mx-4 p-6 bg-gray-200 rounded-2xl shadow-lg border border-gray-300 lg:p-10">
+      <h2 class="text-3xl font-bold text-center text-gray-900">
+        {invite.nom} {invite.prenom}
+      </h2>
+      <div class="lg:grid lg:grid-cols-2 lg:gap-6 mt-6">
+        <div class="flex justify-center">
+          <img
+            src={invite.imageUrl}
+            alt={`Photo de ${invite.nom} ${invite.prenom}`}
+            class="rounded-xl shadow-md w-full max-w-md object-cover"
+          />
+        </div>
+        <ul class="mt-6 space-y-3 text-gray-800 lg:mt-0">
+          <li class="rounded-2xl p-2 border-2 border-jaune "><span class="font-semibold">Rôle :</span> {invite.role}</li>
+          <li class="rounded-2xl p-2 border-2 border-jaune "><span class="font-semibold">Email :</span> {invite.email}</li>
+          <li class="rounded-2xl p-2 border-2 border-jaune ">
+            <span class="font-semibold">Biographie :</span>
+            <p class="mt-2 text-justify">{invite.biographie}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

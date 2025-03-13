@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { OneIDAct } from "../../../backend/backend.mjs";
+
+const { id } = Astro.params;
+
+const activite = await OneIDAct(id);
+console.log(activite);
+
+if (!activite) {
+  return Astro.redirect("/activites");
+}
+---
+
+<Layout>
+  <div class="flex justify-center mt-7 mb-7 lg:mt-10">
+    <div class="max-w-4xl mx-4 p-6 bg-gray-200 border border-gray-300 rounded-2xl shadow-lg lg:p-10">
+      <h2 class="text-3xl font-bold text-center text-gray-900">
+        {activite.nom}
+      </h2>
+      <div class="lg:grid lg:grid-cols-2 lg:gap-6 mt-6">
+        <div class="flex justify-center">
+          <img
+            src={activite.imageUrl}
+            alt={`Image de l'activité ${activite.nom}`}
+            class="rounded-xl shadow-md w-full max-w-md object-cover"
+          />
+        </div>
+        <ul class="mt-6 space-y-3 text-gray-700 lg:mt-0">
+          <li class="rounded-2xl p-2 border-2 border-jaune ">
+            <span class="font-semibold">Date :</span>
+            {activite.date}
+          </li>
+          <li class="rounded-2xl p-2 border-2 border-jaune ">
+            <span class="font-semibold">Type d'activité :</span>
+            {activite.type}
+          </li>
+          <li class="rounded-2xl p-2 border-2 border-jaune"><span class="font-semibold">Lieu :</span> {activite.lieu}</li>
+          <li class="rounded-2xl p-2 border-2 border-jaune">
+            <span class="font-semibold">Description :</span>
+            <p class="mt-2 text-justify">{activite.description}</p>
+          </li>
+          <li class="mt-4">
+            <a
+              href="/activites"
+              class="block text-center text-black rounded-xl border-2 border-yellow-400 bg-white px-4 py-2 mt-4 font-bold hover:bg-yellow-400 transition"
+            >
+              Retour aux activités
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

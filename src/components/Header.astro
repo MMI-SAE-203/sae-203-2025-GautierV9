@@ -1,0 +1,62 @@
+---
+import Logo from '../assets/icons/Logo.svg'
+const currentPath = Astro.url.pathname;
+console.log(currentPath)
+---
+<header class="flex items-center justify-between px-4 gap-8 border-b-2 border-b-indigo-100 h-20 bg-gray-900 text-blanc">
+  <a href="/">
+    <Logo />
+  </a>
+  <nav
+    id="menu"
+    class="flex-1 flex justify-center items-center px-6 py-12 mt-20 flex-col fixed z-10 inset-0 bg-gray-900 text-blanc visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:bg-transparent lg:static lg:mt-0 lg:py-6 lg:flex-row lg:justify-end"
+    aria-hidden="true"
+  >
+    <ul class="flex flex-col gap-4 lg:flex-row">
+      <li>
+        <a class="block p-4 rounded-lg text-blanc" href="/activites">Les activités</a>
+      </li>
+      <li>
+        <a class="block p-4 rounded-lg text-blanc" href="/films">Les films</a>
+      </li>
+      <li>
+        <a class="block p-4 rounded-lg text-blanc" href="/billetterie">La Billetterie</a>
+      </li>
+      <li>
+        <a class="block p-4 rounded-lg text-blanc" href="/invites">Les Invités</a>
+      </li>
+      <li>
+        <a class="block p-4 rounded-lg text-blanc" href="/contact">Nous Contacter</a>
+      </li>
+    </ul>
+  </nav>
+  <button
+    id="menu-btn"
+    class="group relative z-10 flex h-3 w-6 flex-col justify-between *:block *:ease *:h-0.5 *:w-full *:transform *:rounded-full *:bg-white *:transition *:duration-300 lg:hidden"
+    aria-label="Menu"
+    aria-controls="menu"
+    aria-expanded="false"
+  >
+    <span class="group-aria-expanded:translate-y-[5px] group-aria-expanded:rotate-45"></span>
+    <span class="group-aria-expanded:-translate-y-[5px] group-aria-expanded:-rotate-45"></span>
+  </button>
+</header>
+
+<script>
+  // On cible les éléments à modifier
+  const toggle = document.querySelector("#menu-btn");
+  const nav = document.querySelector("#menu");
+  const page = document.body;
+
+  // Vérifier si les éléments existent avant d'ajouter l'événement
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.ariaExpanded === "true";
+      const isClosed = !isOpen;
+      // Mise à jour des attributs ARIA pour accessibilité
+      toggle.ariaExpanded = String(isClosed);
+      nav.ariaHidden = String(isOpen);
+      page.classList.toggle("noscroll", isClosed);
+    });
+  }
+</script>
