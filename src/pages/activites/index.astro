@@ -14,13 +14,6 @@ console.log(activites);
       activites.map((activite) => (
         <div class="p-4 m-4 bg-gray-200 border border-gray-300 flex flex-col rounded-xl shadow-lg">
           <ul class="flex flex-col items-center justify-between h-full">
-            <li>
-              <img
-                src={activite.imgUrl}
-                alt={`Image de l'activité ${activite.titre}`}
-                class="w-full h-auto mb-3 rounded-xl"
-              />
-            </li>
             <li class="text-center text-black font-bold">{activite.titre}</li>
             <li class="text-center text-gray-700">{activite.type}</li>
           </ul>

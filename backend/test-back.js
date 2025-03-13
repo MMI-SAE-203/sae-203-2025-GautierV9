@@ -1,102 +1,84 @@
-import { getFilms } from './backend.mjs';
+//Mathilde Gatefait TDB2 
 
-// Tester la récupération de tous les films
+import { allFilms,allActivites,allInvitesByAgentName,OneID,OneIDAct,OneIDInv,
+    ActInvitesById,ActInvitesByName,updateActiviteById} from './backend.mjs'
+
+
+/* films trié par date de projection
 try {
-    const films = await getFilms();
-    console.log("Films récupérés :", films);
+const records = await allFilms() ;
+console.log(records) ;
 } catch (e) {
-    console.error(e);
+console.error(e) ;
+} 
+
+
+//liste activités par date de projections
+try {
+const records = await allActivites() ;
+console.log(records) ;
+} catch (e) {
+console.error(e) ;
+} 
+
+
+//invites par ordre alphabetique
+try {
+const records = await allInvitesByAgentName();
+console.log(records);
+} catch (e) {
+console.error(e);
 }
 
-import { getActivites } from './backend.mjs';
 
-// Tester la récupération de toutes les activités
+//film par son id
 try {
-    const activites = await getActivites();
-    console.log("Activités récupérées :", activites);
+const Onerecord = await OneID('1bq6kbo1067og10') ;
+console.log(Onerecord) ;
 } catch (e) {
-    console.error(e);
+console.error(e) ;
 }
 
-import { getInvites } from './backend.mjs';
 
-// Tester la récupération de tous les invités triés alphabétiquement
+//activite par son id
 try {
-    const invites = await getInvites();
-    console.log("Invités récupérés :", invites);
+const Onerecord = await OneIDAct('jthu6s19y2v47v4') ;
+console.log(Onerecord) ;
 } catch (e) {
-    console.error(e);
+console.error(e) ;
 }
 
-import { getFilmById } from './backend.mjs';
 
-// Tester la récupération d'un film par ID
+//invites par son id 
 try {
-    const film = await getFilmById("k388k4vk776z67e");
-    console.log("Film récupéré :", film);
+const Onerecord = await OneIDInv('25573k3yl63290y') ;
+console.log(Onerecord) ;
 } catch (e) {
-    console.error(e);
+console.error(e) ;
 }
 
-import { getActiviteById } from './backend.mjs';
 
-// Tester la récupération d'une activité par ID
+//act d'un invites par son id
 try {
-    const activite = await getActiviteById("r6577r45dgj1of2");
-    console.log("Activité récupérée :", activite);
+const records = await ActInvitesById('2815zge6b0113tm') ;
+console.log(records) ;
 } catch (e) {
-    console.error(e);
+console.error(e) ;
 }
 
-import { getInviteById } from './backend.mjs';
 
-// Tester la récupération d'un invité par ID
+//act d'un invites par son nom
 try {
-    const invite = await getInviteById("d7y6z946y6r5uh4");
-    console.log("Invité récupéré :", invite);
+const records = await ActInvitesByName('Dubois') ;
+console.log(records) ;
 } catch (e) {
-    console.error(e);
+console.error(e) ;
 }
+*/
 
-import { getActivitesByInviteId } from './backend.mjs';
-
-// Tester la récupération des activités d'un animateur par ID
-try {
-    const activitesAnimateur = await getActivitesByInviteId("d7y6z946y6r5uh4");
-    console.log("Activités de l'animateur récupérées :", activitesAnimateur);
-} catch (e) {
-    console.error(e);
-}
-
-import { getActivitesByInviteNom } from './backend.mjs';
-
-// Tester la récupération des activités d'un animateur par nom
-try {
-    const activitesAnimateurNom = await getActivitesByInviteNom("Bernard");
-    console.log("Activités de l'animateur récupérées par nom :", activitesAnimateurNom);
-} catch (e) {
-    console.error(e);
-}
-
-import { createOrUpdate } from './backend.mjs';
-
-// Tester l'ajout d'un nouveau film
-try {
-    const newFilm = {
-        titre: "Nouveau Film",
-        annee_sortie: 2025,
-        synopsis: "Un film de test",
-        liste_acteurs: "Acteur 1, Acteur 2",
-        bande_annonce: "https://www.youtube.com/watch?v=xCOQgo3Ejcw",
-        duree: 120,
-        langue: "Français",
-        production: "Studio Test",
-        genre: "Action",
-        date_projection: "2025-06-10",
-        presente_par: "3vksd9n9841hm05"
-    };
-    const filmAjoute = await createOrUpdate("Film", newFilm);
-    console.log("Film ajouté avec succès :", filmAjoute);
-} catch (e) {
-    console.error(e);
-}
+//modifier info activité
+const data = {
+"nom" : "Atelier de Sculptures Hantées",
+"type_activite" : "atelier",
+};  
+await updateActiviteById('3k6z7q443u17hvx',data);
