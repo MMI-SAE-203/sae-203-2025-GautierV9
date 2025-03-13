@@ -73,10 +73,3 @@ console.log(records) ;
 console.error(e) ;
 }
 */
-
-//modifier info activité
-const data = {
-"nom" : "Atelier de Sculptures Hantées",
-"type_activite" : "atelier",
-};  
-await updateActiviteById('3k6z7q443u17hvx',data);
