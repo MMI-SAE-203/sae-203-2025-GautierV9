@@ -1,5 +1,3 @@
-//Mathilde Gatefait TDB2 
-
 import { allFilms,allActivites,allInvitesByAgentName,OneID,OneIDAct,OneIDInv,
     ActInvitesById,ActInvitesByName,updateActiviteById} from './backend.mjs'
 
