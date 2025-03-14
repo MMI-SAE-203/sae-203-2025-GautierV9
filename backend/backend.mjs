@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-const pb = new PocketBase('https://sae203.gautiervicat.fr/');
+const pb = new PocketBase('https://sae203.gautiervicat.fr:443');
 export default pb;
 
 
